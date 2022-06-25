@@ -1,0 +1,6 @@
+### dem variant theo product
+select post_parent, count(*) as variants from kk_posts 
+where post_type = 'product_variation' 
+group by post_parent 
+order by variants
+desc
