@@ -20,17 +20,17 @@ if product_id:
                 for lang_code, lang_name in self._notice['target']['languages'].items():
                     thumbnail_id = self.wp_image(product_image, image_details, convert['thumb_image'].get('label', ''),
                                                 check_exist=False, lang=lang_code)
-                    if thumbnail_id :
+                    if thumbnail_id and self.is_wpml(): :
                         res = self.import_data_connector(self.rf_get_query_img_wpml(thumbnail_id, lang_code, trid))
-                        self.log(thumbnail_id,"thumbnail_id")
-                        product_meta = {
-                            'meta_value': thumbnail_id,
-                        }
-                        where={
-                        'post_id': product_id,
-                        'meta_key':"_thumbnail_id"
+                    self.log(thumbnail_id,"thumbnail_id")
+                    product_meta = {
+                        'meta_value': thumbnail_id,
+                    }
+                    where={
+                    'post_id': product_id,
+                    'meta_key':"_thumbnail_id"
 
-                        }
-                        update_query = self.create_update_query_connector("postmeta", product_meta,where)
+                    }
+                    update_query = self.create_update_query_connector("postmeta", product_meta,where)
 
-                        product_update = self.import_product_data_connector(update_query, True, product_id)
+                    product_update = self.import_product_data_connector(update_query, True, product_id)
