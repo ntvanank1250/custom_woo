@@ -1,8 +1,8 @@
 # convert_product_export/ zencart
-	option_value_data['thumb_image'] = {
-    'label': '',
-    'url' : 'https://hokiglasszen.coded.co.nz/images/',
-    'path' : to_str(option_value["attributes_image"]).replace(" ","%20"),
+option_value_data['thumb_image'] = {
+	'label': '',
+	'url' : 'https://hokiglasszen.coded.co.nz/images/',
+	'path' : to_str(option_value["attributes_image"]).replace(" ","%20"),
 }
 
 # check_product_import
