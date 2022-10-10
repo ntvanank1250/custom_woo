@@ -20,7 +20,7 @@ if product_id:
                 'meta_value': thumbnail_id,
             }
             where={
-            'post_id': id_desc,
+            'post_id': product_id,
             'meta_key':"_thumbnail_id"
 
             }
